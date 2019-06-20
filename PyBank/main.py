@@ -64,18 +64,18 @@ with open(budget_data, 'r') as csvfile:
 
     file = open("Financial Analysis.txt","w")
 
-    file.write("Financial Analysis" + "\n")
+    file.write("Financial Analysis")
 
-    file.write("----------------------------" + "\n")
+    file.write("\n----------------------------")
 
-    file.write("Total Months: " + str(total_months) + "\n")
+    file.write("\nTotal Months: " + str(total_months))
 
-    file.write("Total: " + "$" + str(sum(P)) + "\n")
+    file.write("\nTotal: " + "$" + str(sum(P)))
 
-    file.write("Average Change: " + "$" + str(average_change) + "\n")
+    file.write("\nAverage Change: " + "$" + str(average_change))
 
-    file.write("Greatest Increase in Profits: " + str(months[data_change.index(max(data_change))+1]) + " " + "(" + "$" + str(greatest_increase) + ")" + "\n")
+    file.write("\nGreatest Increase in Profits: " + str(months[data_change.index(max(data_change))+1]) + " " + "(" + "$" + str(greatest_increase) + ")")
 
-    file.write("Greatest Decrease in Profits: " + str(months[data_change.index(min(data_change))+1]) + " " + "(" + "$" + str(greatest_decrease) + ")" + "\n")
+    file.write("\nGreatest Decrease in Profits: " + str(months[data_change.index(min(data_change))+1]) + " " + "(" + "$" + str(greatest_decrease) + ")")
 
     
