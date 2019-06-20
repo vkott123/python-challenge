@@ -33,14 +33,14 @@ with open(election_data, 'r') as csvfile:
             candidates_unique.append(candidate_list)
             candidate_vote_count.append(1)
 
-pct = []
+percentage = []
 max_votes = candidate_vote_count[0]
 max_index = 0
 
 for x in range(len(candidates_unique)):
     #calculation to get the percentage, x is the looper value
-    vote_pct = round(candidate_vote_count[x]/total_votes*100, 2)
-    pct.append(vote_pct)
+    vote_percentage = round(candidate_vote_count[x]/total_votes*100, 2)
+    percentage.append(vote_percentage)
     
     if candidate_vote_count[x] > max_votes:
         max_votes = candidate_vote_count[x]
@@ -57,7 +57,7 @@ print("-------------------------")
 print(f"Total Votes: {total_votes}")
 print("-------------------------")
 for x in range(len(candidates_unique)):
-    print(f"{candidates_unique[x]}: {pct[x]}% ({candidate_vote_count[x]})")
+    print(f"{candidates_unique[x]}: {percentage[x]}% ({candidate_vote_count[x]})")
 print("-------------------------")
 print(f"Winner: {election_winner}")
 print("-------------------------")
@@ -72,7 +72,7 @@ file.write("\n-------------------------")
 file.write(f"\nTotal Votes: {total_votes}")
 file.write("\n-------------------------")
 for x in range(len(candidates_unique)):
-    file.write(f"\n{candidates_unique[x]}: {pct[x]}% ({candidate_vote_count[x]})")
+    file.write(f"\n{candidates_unique[x]}: {percentage[x]}% ({candidate_vote_count[x]})")
 file.write("\n-------------------------")
 file.write(f"\nWinner: {election_winner}")
 file.write("\n-------------------------")
