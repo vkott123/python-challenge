@@ -23,7 +23,10 @@ with open(election_data, 'r') as csvfile:
         votes.append((row[2]))
         total_votes = len(votes)
 
-        # Read through column 'C' of csv file and list each unique candidate
+        # Read through column 'C' of csv file
+        # Find any unique candidates
+        # Calculate each candidate's vote count
+
         candidate_list = (row[2])
         
         if candidate_list in candidates_unique:
@@ -37,16 +40,20 @@ percentage = []
 max_votes = candidate_vote_count[0]
 max_index = 0
 
+# Looping through the function for each unique candidate found (see above code)
+
 for x in range(len(candidates_unique)):
-    #calculation to get the percentage, x is the looper value
+
+    # Calculate the percentage of votes each candidate won
+
     vote_percentage = round(candidate_vote_count[x]/total_votes*100, 2)
     percentage.append(vote_percentage)
+
+    # Determine the winner of the election based on popular vote
     
     if candidate_vote_count[x] > max_votes:
         max_votes = candidate_vote_count[x]
         max_index = x
-
-# Determine the winner of the elections based on popular vote
 
 election_winner = candidates_unique[max_index] 
 
